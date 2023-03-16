@@ -23,7 +23,7 @@ spec:
     - name: cm-volume
       mountPath: /app/cm
   volumes:
-  - name: volume
+  - name: cm-volume
     configMap:
       name: app-cm
  
