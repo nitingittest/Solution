@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-cm
+data:
+  config.ini:
+    host = db.example.com
+    port = 5432
+    username = dbuser
+    password = dbpass
+    dbname = mydb
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-third
+spec:
+  containers:
+  - name: app-container
+    image: nginx
+    volumeMounts:
+    - name: cm-volume
+      mountPath: /app/cm
+  volumes:
+  - name: volume
+    configMap:
+      name: app-cm
