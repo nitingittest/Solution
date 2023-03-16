@@ -37,7 +37,7 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: sample-data
+  name: sample
 data:
   sample.csv: |
     column1,column2
@@ -57,4 +57,4 @@ spec:
   volumes:
   - name: data-volume
     configMap:
-      name: sample-data
+      name: sample
